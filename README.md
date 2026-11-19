@@ -55,5 +55,5 @@ git submodule add https://github.com/Muelsysel/my-ai-style.git .ai-style
 ## 维护约定
 
 - 规则只改 `agents/AGENTS.md` 和 `prompts/` 下的提示词，根目录 `AGENTS.md` 是安装脚本的产物。
-- 文风或规约实质变化时改 `VERSION`、写版本记录，再重跑安装脚本更新已接入的仓库。
-- CI 对根目录 `AGENTS.md` 跑 `--check`，防止生成物与模板漂移。
+- `VERSION` 只随规约模板（`agents/AGENTS.md`）的内容变化；提示词和仓库基础设施的改动记在版本记录的未发布一节。
+- 交付前在本仓库跑 `python scripts/install.py --check .`，生成物与模板不一致就重跑安装脚本。
